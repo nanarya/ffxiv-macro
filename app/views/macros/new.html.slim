@@ -1,0 +1,13 @@
+h1 Macros#new
+p Find me in app/views/macros/new.html.slim
+.nav.justify-content-end
+    = link_to '一覧', macros_path, class: 'nav-link'
+
+= form_with model: @macro, local: true do |f|
+    .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-controll', id: 'macro_name'
+    .form-group
+        = f.label :body
+        = f.text_area :body, rows: 15, class: 'form-control', id: 'macro_body'
+    = f.submit nil, class: 'btn btn-primary'

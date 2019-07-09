@@ -10,7 +10,7 @@ ja:
   models:
     macro: マクロ
   attributes:
-    macro:
+    macro: マクロ
     id: ID
     title: タイトル
     body: 本文

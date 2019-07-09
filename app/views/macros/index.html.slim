@@ -2,3 +2,15 @@ h1 Macros#index
 p Find me in app/views/macros/index.html.slim
 
 = link_to '新規登録', new_macro_path, class: 'btn btn-primary'
+
+.mb-3
+table.table.table-hover
+    thead.thead-default
+        tr
+            th= Macro.human_attribute_name(:title)
+            th= Macro.human_attribute_name(:created_at)
+    tbody
+        - @macros.each do |macro|
+            tr
+                td= link_to macro.title, macro
+                td= macro.created_at

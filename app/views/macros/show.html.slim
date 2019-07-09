@@ -1,2 +1,25 @@
 h1 Macros#show
 p Find me in app/views/macros/show.html.slim
+h1 マクロの詳細です
+
+.nav.justify-content-end
+    = link_to '一覧', macros_path, class: 'nav-link'
+table.table.table-hover
+    tbody
+        tr
+            th= Macro.human_attribute_name(:id)
+            td= @macro.id
+        tr
+            th= Macro.human_attribute_name(:title)
+            td= @macro.title
+        tr
+            th= Macro.human_attribute_name(:body)
+            td= simple_format(h(@macro.body), (), sanitize: false, wrapper_tag: "div")
+        tr
+            th= Macro.human_attribute_name(:created_at)
+            td= @macro.created_at
+        tr
+            th= Macro.human_attribute_name(:updated_at)
+            td= @macro.updated_at
+
+
